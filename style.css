@@ -32,6 +32,7 @@ body {
   height: 85px;
   border-radius: 12px;
   border: none;
+
   box-shadow:
     0 0 0px #ef361e00,
     0 0 10px #ef361e00,
@@ -43,8 +44,8 @@ body {
   width: 100%;
   aspect-ratio: 210 / 297;
   border-radius: 12px;
-  position: relative;
   overflow: hidden;
+  position: relative;
 
   /* Borda com brilho vermelho */
   box-shadow:
@@ -53,61 +54,52 @@ body {
     inset 0 0 10px #ef371e;
 }
 
-/* ===== SLIDER — ESTILO INSTAGRAM ===== */
+/* SLIDER */
 .slider {
   width: 100%;
   height: 100%;
   display: flex;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
+  transition: transform 0.4s ease;
 }
 
 .slide {
-  flex: 0 0 100%;
+  min-width: 100%;
   height: 100%;
-  scroll-snap-align: center;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  user-select: none;
-  pointer-events: none;
 }
-
-/* esconder scrollbar */
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-/* ===== INDICADORES (BOLINHAS) ===== */
-.dots {
+/* CONTAINER DOS BOTÕES */
+.nav-container {
   position: absolute;
   bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 8px;
-  z-index: 5;
+  gap: 18px;
+  z-index: 10;
 }
 
-.dot {
-  width: 6px;
-  height: 6px;
+/* BOTÕES */
+.nav {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(239, 55, 30, 0.6);
+  color: #fff;
+  font-size: 20px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  backdrop-filter: blur(4px);
   transition: 0.3s;
+  margin-top: -100px;
 }
 
-.dot.active {
-  background: #ef371e;
+.nav:hover {
+  background: rgba(239, 55, 30, 0.45);
 }
 
 /* TEXTO */
@@ -146,3 +138,4 @@ body {
   background: #ef371e;
   color: #000;
 }
+
